@@ -26,9 +26,11 @@ const timer = (seconds) => {
 };
 
 const displayTimeLeft = (seconds) => {
-  const minutes = Math.floor(seconds / 60);
+  const remainderMinutes = Math.floor(seconds / 60);
   const remainderSeconds = seconds % 60;
-  const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+  const display = `${remainderMinutes}:${
+    remainderSeconds < 10 ? '0' : ''
+  }${remainderSeconds}`;
   document.title = display;
   timerDisplay.textContent = display;
 };
